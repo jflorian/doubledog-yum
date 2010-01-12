@@ -16,31 +16,33 @@ class yum {
 	pkg_release	=> "1.0-1.noarch",
     }
 
-    config_repo {"doubledog":
-	server_uri	=> "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
-	pkg_name	=> "doubledog-yum-repo",
-	# TODO: use operatingsystemrelease once packages are built for all
-	pkg_release	=> "10-1.fc10.noarch",
-    }
+    if ($operatingsystem == "Fedora") {
+        config_repo {"doubledog":
+            server_uri	=> "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
+            pkg_name	=> "doubledog-yum-repo",
+            # TODO: use operatingsystemrelease once packages are built for all
+            pkg_release	=> "10-1.fc10.noarch",
+        }
 
-    config_repo {"local-fedora":
-	server_uri	=> "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
-	pkg_name	=> "yum-local-mirror-conf",
-	# TODO: use operatingsystemrelease once packages are built for all
-	pkg_release	=> "10-1.fc10.noarch",
-    }
+        config_repo {"local-fedora":
+            server_uri	=> "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
+            pkg_name	=> "yum-local-mirror-conf",
+            # TODO: use operatingsystemrelease once packages are built for all
+            pkg_release	=> "10-1.fc10.noarch",
+        }
 
-    config_repo {"rpmfusion-free":
-	server_uri	=> "http://download1.rpmfusion.org/free/fedora",
-	pkg_name	=> "rpmfusion-free-release",
-	pkg_release	=> "stable.noarch",
-    }
+        config_repo {"rpmfusion-free":
+            server_uri	=> "http://download1.rpmfusion.org/free/fedora",
+            pkg_name	=> "rpmfusion-free-release",
+            pkg_release	=> "stable.noarch",
+        }
 
-    config_repo {"rpmfusion-nonfree":
-	server_uri	=> "http://download1.rpmfusion.org/nonfree/fedora",
-	pkg_name	=> "rpmfusion-nonfree-release",
-	pkg_release	=> "stable.noarch",
-	require		=> Exec["config-repo-rpmfusion-free"],
+        config_repo {"rpmfusion-nonfree":
+            server_uri	=> "http://download1.rpmfusion.org/nonfree/fedora",
+            pkg_name	=> "rpmfusion-nonfree-release",
+            pkg_release	=> "stable.noarch",
+            require		=> Exec["config-repo-rpmfusion-free"],
+        }
     }
 
 }
