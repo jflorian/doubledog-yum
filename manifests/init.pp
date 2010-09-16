@@ -22,7 +22,7 @@ class yum {
         pkg_release => $operatingsystemrelease ? {
             "11"        => "10-1.fc10.noarch",
             "12"        => "10-1.fc10.noarch",
-            "13"        => "13-1.fc13.noarch",
+            "13"        => "13-2.fc13.noarch",
         },
     }
 
