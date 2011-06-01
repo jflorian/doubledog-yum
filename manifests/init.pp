@@ -24,6 +24,7 @@ class yum {
             "12"        => "12-1.fc12.noarch",
             "13"        => "13-2.fc13.noarch",
             "14"        => "14-1.fc14.noarch",
+            "15"        => "15-1.fc15.noarch",
         },
     }
 
@@ -35,6 +36,7 @@ class yum {
             "12"        => "10-1.fc10.noarch",
             "13"        => "13-1.fc13.noarch",
             "14"        => "14-1.fc14.noarch",
+            "15"        => "15-1.fc15.noarch",
         },
     }
 
