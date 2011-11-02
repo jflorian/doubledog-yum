@@ -1,4 +1,4 @@
-# /etc/puppet/modules/yum/manifests/definitions/install_repo_rpm.pp
+# modules/yum/manifests/definitions/install_repo_rpm.pp
 #
 # Synopsis:
 #       Installs a YUM repo configuration via rpm accessed by URI

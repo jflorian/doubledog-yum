@@ -1,4 +1,4 @@
-# /etc/puppet/modules/yum/manifests/classes/adobe.pp
+# modules/yum/manifests/classes/adobe.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for Adobe software

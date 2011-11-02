@@ -1,4 +1,4 @@
-# /etc/puppet/modules/yum/manifests/classes/rpmfusion.pp
+# modules/yum/manifests/classes/rpmfusion.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for rpmfusion software

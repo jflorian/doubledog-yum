@@ -1,4 +1,4 @@
-# /etc/puppet/modules/yum/manifests/classes/core.pp
+# modules/yum/manifests/classes/core.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for core software

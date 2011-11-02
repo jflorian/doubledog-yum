@@ -1,4 +1,4 @@
-# /etc/puppet/modules/yum/manifests/classes/doubledog.pp
+# modules/yum/manifests/classes/doubledog.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for doubledog software
