@@ -1,7 +1,7 @@
 # modules/yum/manifests/classes/rpmfusion.pp
 #
 # Synopsis:
-#       Installs the YUM repo configuration for rpmfusion software
+#       Installs the YUM repo configuration for rpmfusion software.
 #
 # Parameters:
 #       NONE
@@ -15,13 +15,13 @@
 
 class yum::rpmfusion {
 
-    install_repo_rpm {"rpmfusion-free":
+    install_repo_rpm_from_uri {"rpmfusion-free":
         server_uri  => "http://download1.rpmfusion.org/free/fedora",
         pkg_name    => "rpmfusion-free-release",
         pkg_release => "stable.noarch",
     }
 
-    install_repo_rpm {"rpmfusion-nonfree":
+    install_repo_rpm_from_uri {"rpmfusion-nonfree":
         server_uri  => "http://download1.rpmfusion.org/nonfree/fedora",
         pkg_name    => "rpmfusion-nonfree-release",
         pkg_release => "stable.noarch",

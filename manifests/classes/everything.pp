@@ -1,7 +1,7 @@
 # modules/yum/manifests/classes/everything.pp
 #
 # Synopsis:
-#       Installs the YUM repo configuration for all software
+#       Installs the YUM repo configuration for all software.
 #
 # Parameters:
 #       NONE

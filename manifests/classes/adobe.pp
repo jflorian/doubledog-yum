@@ -1,7 +1,7 @@
 # modules/yum/manifests/classes/adobe.pp
 #
 # Synopsis:
-#       Installs the YUM repo configuration for Adobe software
+#       Installs the YUM repo configuration for Adobe software.
 #
 # Parameters:
 #       NONE
@@ -15,11 +15,7 @@
 
 class yum::adobe {
 
-    install_repo_rpm {"adobe":
-        server_uri      => "http://linuxdownload.adobe.com/adobe-release",
-        # Yes, it's i386 and noarch, really!  Sigh ...
-        pkg_name        => "adobe-release-i386",
-        pkg_release     => "1.0-1.noarch",
+    install_repo_rpm_from_file {"adobe-release-${architecture}-1.0-1.noarch":
     }
 
 }

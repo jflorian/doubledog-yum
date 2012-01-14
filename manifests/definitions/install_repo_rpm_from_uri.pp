@@ -1,7 +1,7 @@
-# modules/yum/manifests/definitions/install_repo_rpm.pp
+# modules/yum/manifests/definitions/install_repo_rpm_from_uri.pp
 #
 # Synopsis:
-#       Installs a YUM repo configuration via rpm accessed by URI
+#       Installs a YUM repo configuration via rpm accessed by URI.
 #
 # Parameters:
 #       name:           The name of the YUM repository.
@@ -14,7 +14,7 @@
 #
 #       include yum
 #
-#       yum::install_repo_rpm {"adobe":
+#       yum::install_repo_rpm_from_uri {"adobe":
 #           server_uri      => "http://linuxdownload.adobe.com/adobe-release",
 #           # Yes, it's i386 and noarch, really!  Sigh ...
 #           pkg_name        => "adobe-release-i386",
@@ -23,10 +23,10 @@
 
 
 
-define yum::install_repo_rpm ($server_uri, $pkg_name, $pkg_release) {
+define yum::install_repo_rpm_from_uri ($server_uri, $pkg_name, $pkg_release) {
 
     exec { "${name}":
-        command => "rpm -ivh ${server_uri}/${pkg_name}-${pkg_release}.rpm",
+        command => "rpm -i ${server_uri}/${pkg_name}-${pkg_release}.rpm",
         unless  => "rpm -q ${pkg_name}",
     }
 

@@ -1,7 +1,7 @@
 # modules/yum/manifests/classes/doubledog.pp
 #
 # Synopsis:
-#       Installs the YUM repo configuration for doubledog software
+#       Installs the YUM repo configuration for doubledog software.
 #
 # Parameters:
 #       NONE
@@ -15,7 +15,7 @@
 
 class yum::doubledog {
 
-    install_repo_rpm {"doubledog":
+    install_repo_rpm_from_uri {"doubledog":
         server_uri  => "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
         pkg_name    => "doubledog-yum-repo",
         pkg_release => $operatingsystemrelease ? {
