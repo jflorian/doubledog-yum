@@ -1,4 +1,4 @@
-# modules/yum/manifests/classes/adobe.pp
+# modules/yum/manifests/adobe.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for Adobe software.

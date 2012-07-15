@@ -1,4 +1,4 @@
-# modules/yum/manifests/definitions/install_repo_rpm_from_uri.pp
+# modules/yum/manifests/install_repo_rpm_from_uri.pp
 #
 # Synopsis:
 #       Installs a YUM repo configuration via rpm accessed by URI.

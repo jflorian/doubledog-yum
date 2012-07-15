@@ -1,4 +1,4 @@
-# modules/yum/manifests/classes/local-fedora.pp
+# modules/yum/manifests/local-fedora.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for local-fedora software.

@@ -1,4 +1,4 @@
-# modules/yum/manifests/classes/everything.pp
+# modules/yum/manifests/everything.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for all software.

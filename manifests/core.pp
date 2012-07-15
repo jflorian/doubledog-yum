@@ -1,4 +1,4 @@
-# modules/yum/manifests/classes/core.pp
+# modules/yum/manifests/core.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for core software.

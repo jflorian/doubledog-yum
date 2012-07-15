@@ -1,4 +1,4 @@
-# modules/yum/manifests/classes/rpmfusion.pp
+# modules/yum/manifests/rpmfusion.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for rpmfusion software.

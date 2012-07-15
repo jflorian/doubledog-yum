@@ -1,4 +1,4 @@
-# modules/yum/manifests/classes/doubledog.pp
+# modules/yum/manifests/doubledog.pp
 #
 # Synopsis:
 #       Installs the YUM repo configuration for doubledog software.

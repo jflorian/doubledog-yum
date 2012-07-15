@@ -1,4 +1,4 @@
-# modules/yum/manifests/definitions/remove.pp
+# modules/yum/manifests/remove.pp
 #
 # Synopsis:
 #       Remove a package directly with yum.

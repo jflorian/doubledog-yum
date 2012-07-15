@@ -1,4 +1,4 @@
-# modules/yum/manifests/definitions/install_repo_rpm_from_file.pp
+# modules/yum/manifests/install_repo_rpm_from_file.pp
 #
 # Synopsis:
 #       Installs a YUM repo configuration via rpm on puppet master.
