@@ -15,7 +15,7 @@
 
 class yum::doubledog {
 
-    install_repo_rpm_from_uri {"doubledog":
+    yum::install_repo_rpm_from_uri {"doubledog":
         server_uri  => "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
         pkg_name    => "doubledog-yum-repo",
         pkg_release => $operatingsystemrelease ? {

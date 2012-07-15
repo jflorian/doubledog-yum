@@ -15,7 +15,7 @@
 
 class yum::local-fedora {
 
-    install_repo_rpm_from_uri {"local-fedora":
+    yum::install_repo_rpm_from_uri {"local-fedora":
         server_uri  => "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
         pkg_name    => "yum-local-mirror-conf",
         pkg_release => $operatingsystemrelease ? {

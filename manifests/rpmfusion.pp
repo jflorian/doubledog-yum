@@ -15,13 +15,13 @@
 
 class yum::rpmfusion {
 
-    install_repo_rpm_from_uri {"rpmfusion-free":
+    yum::install_repo_rpm_from_uri {"rpmfusion-free":
         server_uri  => "http://download1.rpmfusion.org/free/fedora",
         pkg_name    => "rpmfusion-free-release",
         pkg_release => "stable.noarch",
     }
 
-    install_repo_rpm_from_uri {"rpmfusion-nonfree":
+    yum::install_repo_rpm_from_uri {"rpmfusion-nonfree":
         server_uri  => "http://download1.rpmfusion.org/nonfree/fedora",
         pkg_name    => "rpmfusion-nonfree-release",
         pkg_release => "stable.noarch",
