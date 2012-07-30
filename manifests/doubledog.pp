@@ -21,6 +21,7 @@ class yum::doubledog {
         pkg_release => $operatingsystemrelease ? {
             "15"        => "15-1.fc15.noarch",
             "16"        => "16-1.fc16.noarch",
+            "17"        => "17-1.fc17.noarch",
         },
     }
 
