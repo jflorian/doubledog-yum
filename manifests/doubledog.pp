@@ -7,7 +7,7 @@
 #       NONE
 #
 # Requires:
-#       Class["Yum"]
+#       Class['Yum']
 #
 # Example usage:
 #
@@ -15,13 +15,14 @@
 
 class yum::doubledog {
 
-    yum::install_repo_rpm_from_uri {"doubledog":
+    yum::install_repo_rpm_from_uri {'doubledog':
         server_uri  => "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
-        pkg_name    => "doubledog-yum-repo",
+        pkg_name    => 'doubledog-yum-repo',
         pkg_release => $operatingsystemrelease ? {
-            "15"        => "15-1.fc15.noarch",
-            "16"        => "16-1.fc16.noarch",
-            "17"        => "17-1.fc17.noarch",
+            '15'        => '15-1.fc15.noarch',
+            '16'        => '16-1.fc16.noarch',
+            '17'        => '17-1.fc17.noarch',
+            '18'        => '18-1.fc18.noarch',
         },
     }
 
