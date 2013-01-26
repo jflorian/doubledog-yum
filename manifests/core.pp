@@ -18,18 +18,10 @@ class yum::core {
     include yum::doubledog
     include yum::local-fedora
 
-    if $operatingsystem == 'Fedora' {
+    # we don't use delta RPM support
+    yum::remove { 'yum-presto': }
 
-        if $operatingsystemrelease >= 12 {
-            # we don't use delta RPM support
-            yum::remove { 'yum-presto': }
-        }
-
-        if $operatingsystemrelease >= 14 {
-            # not used and slows yum startup
-            yum::remove { 'PackageKit-yum-plugin': }
-        }
-
-    }
+    # not used and slows yum startup
+    yum::remove { 'PackageKit-yum-plugin': }
 
 }

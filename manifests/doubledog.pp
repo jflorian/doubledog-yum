@@ -19,7 +19,6 @@ class yum::doubledog {
         server_uri  => "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
         pkg_name    => 'doubledog-yum-repo',
         pkg_release => $operatingsystemrelease ? {
-            '15'        => '15-1.fc15.noarch',
             '16'        => '16-1.fc16.noarch',
             '17'        => '17-1.fc17.noarch',
             '18'        => '18-1.fc18.noarch',
