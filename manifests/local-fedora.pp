@@ -22,6 +22,7 @@ class yum::local-fedora {
             '16'        => '16-1.fc16.noarch',
             '17'        => '17-1.fc17.noarch',
             '18'        => '18-1.fc18.noarch',
+            '19'        => '19-1.fc19.noarch',
         },
     }
 
