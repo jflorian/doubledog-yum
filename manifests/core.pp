@@ -4,22 +4,31 @@
 #       Installs the YUM repo configuration for core software.
 #
 # Parameters:
-#       NONE
+#       Name__________  Notes_  Description___________________________
 #
-# Requires:
-#       Class["Yum"]
-#
-# Example usage:
-#
-#       include yum::core
+
 
 class yum::core {
 
-    include yum::doubledog
-    include yum::local-fedora
+    include 'yum::doubledog'
+    include 'yum::local-fedora'
 
-    # we don't use delta RPM support
-    yum::remove { 'yum-presto': }
+    File {
+        owner       => 'root',
+        group       => 'root',
+        mode        => '0644',
+        seluser     => 'system_u',
+        selrole     => 'object_r',
+        seltype     => 'etc_t',
+    }
+
+    file { '/etc/yum.conf':
+        source  => [
+            'puppet:///private-host/yum/yum.conf',
+            'puppet:///private-domain/yum/yum.conf',
+            'puppet:///modules/yum/yum.conf',
+        ],
+    }
 
     # not used and slows yum startup
     yum::remove { 'PackageKit-yum-plugin': }
