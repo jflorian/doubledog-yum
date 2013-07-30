@@ -7,25 +7,22 @@
 #       NONE
 #
 # Requires:
-#       Class["Yum"]
-#
-# Example usage:
-#
-#       include yum::rpmfusion
+#       Class['Yum']
+
 
 class yum::rpmfusion {
 
-    yum::install_repo_rpm_from_uri {"rpmfusion-free":
-        server_uri  => "http://download1.rpmfusion.org/free/fedora",
-        pkg_name    => "rpmfusion-free-release",
-        pkg_release => "stable.noarch",
+    yum::install_repo_rpm_from_uri {'rpmfusion-free':
+        server_uri  => 'http://download1.rpmfusion.org/free/fedora',
+        pkg_name    => 'rpmfusion-free-release',
+        pkg_release => "$operatingsystemrelease.noarch"
     }
 
-    yum::install_repo_rpm_from_uri {"rpmfusion-nonfree":
-        server_uri  => "http://download1.rpmfusion.org/nonfree/fedora",
-        pkg_name    => "rpmfusion-nonfree-release",
-        pkg_release => "stable.noarch",
-        require     => Exec["rpmfusion-free"],
+    yum::install_repo_rpm_from_uri {'rpmfusion-nonfree':
+        server_uri  => 'http://download1.rpmfusion.org/nonfree/fedora',
+        pkg_name    => 'rpmfusion-nonfree-release',
+        pkg_release => "$operatingsystemrelease.noarch",
+        require     => Exec['rpmfusion-free'],
     }
 
 }
