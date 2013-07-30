@@ -36,7 +36,7 @@ define yum::install_repo_rpm_from_file () {
     }
 
     exec { "${name}":
-        command => "rpm -i ${cached_rpm}",
+        command => "yum -y install ${cached_rpm}",
         require => File["${cached_rpm}"],
         unless  => "rpm -q ${name}",
     }

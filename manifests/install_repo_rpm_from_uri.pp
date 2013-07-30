@@ -26,7 +26,7 @@
 define yum::install_repo_rpm_from_uri ($server_uri, $pkg_name, $pkg_release) {
 
     exec { "${name}":
-        command => "rpm -i ${server_uri}/${pkg_name}-${pkg_release}.rpm",
+        command => "yum -y install ${server_uri}/${pkg_name}-${pkg_release}.rpm",
         unless  => "rpm -q ${pkg_name}",
     }
 
