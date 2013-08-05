@@ -55,7 +55,7 @@ ouput_width = 80
 email_from = root
 
 # List of addresses to send messages to.
-email_to = root
+email_to = root@doubledog.org
 
 # Name of the host to connect to to send email messages.
 email_host = localhost
