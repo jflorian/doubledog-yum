@@ -6,9 +6,9 @@
 # Parameters:
 #       Name__________  Notes_  Description___________________________
 #
-#       NONE
+#       conf_source             URI of yum-cron configuration source.
 
-class yum::cron {
+class yum::cron ($conf_source) {
 
     include 'yum::params'
 
@@ -35,7 +35,7 @@ class yum::cron {
     }
 
     file { $yum::params::cron_conf_target:
-        source  => "puppet:///modules/yum/$yum::params::cron_conf_source",
+        source  => $conf_source,
     }
 
     service { $yum::params::services:
