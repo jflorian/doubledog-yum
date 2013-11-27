@@ -11,7 +11,7 @@
 #
 # Example usage:
 #
-#       include yum::doubledog
+#       include 'yum::doubledog'
 
 class yum::doubledog {
 

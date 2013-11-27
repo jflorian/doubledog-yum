@@ -11,7 +11,7 @@
 #
 # Example usage:
 #
-#       include yum::local-fedora
+#       include 'yum::local-fedora'
 
 class yum::local-fedora {
 

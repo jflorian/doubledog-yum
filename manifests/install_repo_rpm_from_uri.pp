@@ -12,7 +12,7 @@
 #
 # Example usage:
 #
-#       include yum
+#       include 'yum'
 #
 #       yum::install_repo_rpm_from_uri {"adobe":
 #           server_uri      => "http://linuxdownload.adobe.com/adobe-release",

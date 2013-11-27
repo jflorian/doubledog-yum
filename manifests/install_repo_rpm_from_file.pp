@@ -12,7 +12,7 @@
 #
 # Example usage:
 #
-#       include yum
+#       include 'yum'
 #
 #       install_repo_rpm_from_file {"myrepo-${architecture}-1.0-1.noarch":
 #       }

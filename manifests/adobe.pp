@@ -11,7 +11,7 @@
 #
 # Example usage:
 #
-#       include yum::adobe
+#       include 'yum::adobe'
 
 class yum::adobe {
 

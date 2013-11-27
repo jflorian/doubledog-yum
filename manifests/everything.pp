@@ -11,12 +11,12 @@
 #
 # Example usage:
 #
-#       include yum::everything
+#       include 'yum::everything'
 
 class yum::everything {
 
-    include yum::core
-    include yum::adobe
-    include yum::rpmfusion
+    include 'yum::core'
+    include 'yum::adobe'
+    include 'yum::rpmfusion'
 
 }
