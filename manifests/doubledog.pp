@@ -1,28 +1,38 @@
 # modules/yum/manifests/doubledog.pp
 #
-# Synopsis:
-#       Installs the YUM repo configuration for doubledog software.
+# == Class: yum::doubledog
 #
-# Parameters:
-#       NONE
+# Installs the YUM repo configuration for doubledog software.
 #
-# Requires:
-#       Class['Yum']
+# === Parameters
 #
-# Example usage:
+# NONE
 #
-#       include 'yum::doubledog'
+# === Authors
+#
+#   John Florian <jflorian@doubledog.org>
+
 
 class yum::doubledog {
 
+    # Generally, hosts should use the repo configuration matching their Fedora
+    # installation release.  The builder hosts are an exception since the repo
+    # package they need doesn't yet exist.  Thus they are directed to that
+    # from the prior release.  Once the package does become available, yum
+    # will update this package like any other.
+    $current_rel = $::operatingsystemrelease
+    $prior_rel = $current_rel - 1
+    $use_rel = $hostname ? {
+        /^builder[-_]/  => $prior_rel,
+        default         => $current_rel,
+    }
+
     yum::install_repo_rpm_from_uri {'doubledog':
-        server_uri  => "http://www.doubledog.org/yum/fedora/${operatingsystemrelease}/${architecture}",
+        server_uri  => "http://www.doubledog.org/yum/fedora/${use_rel}/${::architecture}",
         pkg_name    => 'doubledog-yum-repo',
-        pkg_release => $operatingsystemrelease ? {
-            '16'        => '16-1.fc16.noarch',
-            '17'        => '17-1.fc17.noarch',
-            '18'        => '18-1.fc18.noarch',
-            '19'        => '19-1.fc19.noarch',
+        pkg_release => "${::operatingsystemrelease}" ? {
+            # list exceptions here, as necessary
+            default => "${use_rel}-1.fc${use_rel}.noarch",
         },
     }
 
