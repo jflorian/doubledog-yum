@@ -1,4 +1,4 @@
-# modules/yum/manifests/local-fedora.pp
+# modules/yum/manifests/local_fedora.pp
 #
 # == Class: yum::local_fedora
 #
