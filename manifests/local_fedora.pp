@@ -1,6 +1,6 @@
 # modules/yum/manifests/local-fedora.pp
 #
-# == Class: yum::local-fedora
+# == Class: yum::local_fedora
 #
 # Installs the YUM repo configuration for Fedora software from the local
 # mirror.
@@ -14,7 +14,7 @@
 #   John Florian <jflorian@doubledog.org>
 
 
-class yum::local-fedora {
+class yum::local_fedora {
 
     yum::install_repo_rpm_from_uri {'local-fedora':
         server_uri  => "http://www.doubledog.org/yum/fedora/${::operatingsystemrelease}/${::architecture}",
