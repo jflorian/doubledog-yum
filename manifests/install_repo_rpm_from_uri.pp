@@ -9,17 +9,6 @@
 #
 # Requires:
 #       Class["yum"]
-#
-# Example usage:
-#
-#       include 'yum'
-#
-#       yum::install_repo_rpm_from_uri {"adobe":
-#           server_uri      => "http://linuxdownload.adobe.com/adobe-release",
-#           # Yes, it's i386 and noarch, really!  Sigh ...
-#           pkg_name        => "adobe-release-i386",
-#           pkg_release     => "1.0-1.noarch",
-#       }
 
 
 

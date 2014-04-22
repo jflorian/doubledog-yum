@@ -16,7 +16,6 @@
 class yum::everything {
 
     include 'yum::core'
-    include 'yum::adobe'
     include 'yum::rpmfusion'
 
 }
