@@ -28,10 +28,11 @@ class yum::doubledog {
     }
 
     yum::install_repo_rpm_from_uri {'doubledog':
-        server_uri  => "http://www.doubledog.org/yum/fedora/${use_rel}/${::architecture}",
+        server_uri  => "http://www.doubledog.org/yum/fedora/${use_rel}/noarch",
         pkg_name    => 'doubledog-yum-repo',
         pkg_release => "${::operatingsystemrelease}" ? {
             # list exceptions here, as necessary
+            '20'    => "${use_rel}-2.fc${use_rel}.noarch",
             default => "${use_rel}-1.fc${use_rel}.noarch",
         },
     }

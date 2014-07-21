@@ -17,10 +17,11 @@
 class yum::local_fedora {
 
     yum::install_repo_rpm_from_uri {'local-fedora':
-        server_uri  => "http://www.doubledog.org/yum/fedora/${::operatingsystemrelease}/${::architecture}",
+        server_uri  => "http://www.doubledog.org/yum/fedora/${::operatingsystemrelease}/noarch",
         pkg_name    => 'yum-local-mirror-conf',
         pkg_release => "${::operatingsystemrelease}" ? {
             # list exceptions here, as necessary
+            20      => "${::operatingsystemrelease}-3.fc${::operatingsystemrelease}.noarch",
             default => "${::operatingsystemrelease}-1.fc${::operatingsystemrelease}.noarch",
         },
     }
