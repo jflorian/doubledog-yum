@@ -16,6 +16,6 @@
 class yum::everything {
 
     include 'yum::core'
-    include 'yum::rpmfusion'
+    include 'doubledog::subsys::yum::rpmfusion'
 
 }
