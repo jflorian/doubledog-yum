@@ -11,7 +11,7 @@
 class yum::core {
 
     include 'doubledog::subsys::yum::doubledog'
-    include 'yum::local_fedora'
+    include 'doubledog::subsys::yum::local_fedora'
 
     File {
         owner       => 'root',
