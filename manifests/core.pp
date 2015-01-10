@@ -10,7 +10,7 @@
 
 class yum::core {
 
-    include 'yum::doubledog'
+    include 'doubledog::subsys::yum::doubledog'
     include 'yum::local_fedora'
 
     File {
