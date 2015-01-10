@@ -10,9 +10,6 @@
 
 class yum::core {
 
-    include 'doubledog::subsys::yum::doubledog'
-    include 'doubledog::subsys::yum::local_fedora'
-
     File {
         owner       => 'root',
         group       => 'root',
