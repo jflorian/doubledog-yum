@@ -13,8 +13,8 @@ class yum::cron ($conf_source) {
     include 'yum::params'
 
     package { $yum::params::packages:
-        ensure  => installed,
-        notify  => Service[$yum::params::services],
+        ensure => installed,
+        notify => Service[$yum::params::services],
     }
 
     # While yum-updatesd has some nice features, it's a bloated memory pig.
@@ -39,10 +39,10 @@ class yum::cron ($conf_source) {
     }
 
     service { $yum::params::services:
-        enable      => true,
-        ensure      => running,
-        hasrestart  => true,
-        hasstatus   => true,
+        ensure     => running,
+        enable     => true,
+        hasrestart => true,
+        hasstatus  => true,
     }
 
 }

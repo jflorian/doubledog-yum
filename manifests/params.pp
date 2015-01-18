@@ -36,7 +36,7 @@ class yum::params {
         }
 
         default: {
-            fail ("The yum module is not yet supported on ${operatingsystem}.")
+            fail ("The yum module is not yet supported on ${::operatingsystem}.")
         }
 
     }

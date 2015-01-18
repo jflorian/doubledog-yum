@@ -21,7 +21,7 @@ class yum::copr (
     include 'yum::params'
 
     if $ensure != 'absent' and $yum::params::copr_packages == undef {
-        fail "no copr plugin available for $::operatingsystem $::operatingsystemrelease"
+        fail "no copr plugin available for ${::operatingsystem} ${::operatingsystemrelease}"
     }
 
     package { $yum::params::copr_packages:
