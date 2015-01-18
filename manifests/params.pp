@@ -24,6 +24,15 @@ class yum::params {
                 $cron_conf_target = '/etc/yum/yum-cron.conf'
             }
 
+            if $::operatingsystemrelease >= 20 {
+                $copr_packages = [
+                    'yum-plugin-copr',
+                ]
+            } else {
+                # The yum plugin was introduced in Fedora 20.
+                $copr_packages = undef
+            }
+
         }
 
         default: {
