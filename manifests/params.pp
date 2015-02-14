@@ -6,6 +6,17 @@
 
 class yum::params {
 
+    $cron_service_ensure    = 'running'
+    $update_cmd             = 'default'
+    $update_messages        = true
+    $download_updates       = true
+    $apply_updates          = false
+    $random_sleep           = 120
+    $emit_via               = 'stdio'
+    $email_from             = 'root@localhost'
+    $email_to               = 'root'
+    $email_host             = 'localhost'
+
     case $::operatingsystem {
         Fedora: {
 
