@@ -2,15 +2,26 @@
 #
 # == Define: yum::repo_package
 #
-# Installs YUM repository configuration via package.
+# Manages a YUM repository configuration via package.
 #
 # === Parameters
+#
+# ==== Required
 #
 # [*namevar*]
 #   Name of the repository package.
 #
-# [*ensure*]
-#   Instance is to be 'present' (default) or 'absent'.
+# [*arch*]
+#   Architecture of the repository package.  E.g., 'noarch'. Required, but may
+#   be ''.
+#
+# [*dist*]
+#   Distribution tag of the repository package.  E.g., 'fc20'.  Required, but
+#   may be ''.
+#
+# [*rel*]
+#   Release number of the repository package.  E.g., '1'.  Required, but may
+#   be ''.
 #
 # [*uri*]
 #   The URI for obtaining the repository package.  Must be one supported by
@@ -21,21 +32,18 @@
 #   Version number of the repository package.  E.g., '20'.  Required, but may
 #   be ''.
 #
-# [*rel*]
-#   Release number of the repository package.  E.g., '1'.  Required, but may
-#   be ''.
+# ==== Optional
 #
-# [*dist*]
-#   Distribution tag of the repository package.  E.g., 'fc20'.  Required, but
-#   may be ''.
-#
-# [*arch*]
-#   Architecture of the repository package.  E.g., 'noarch'. Required, but may
-#   be ''.
+# [*ensure*]
+#   Instance is to be 'present' (default) or 'absent'.
 #
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
+#
+# === Copyright
+#
+# Copyright 2015 John Florian
 
 
 define yum::repo_package (
