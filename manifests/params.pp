@@ -18,7 +18,26 @@ class yum::params {
     $email_host             = 'localhost'
 
     case $::operatingsystem {
-        Fedora: {
+
+        'CentOS': {
+
+            $services = [
+                'yum-cron',
+            ]
+            $packages = [
+                'yum-cron',
+            ]
+
+            # CentOS 7 also provides an hourly job, but it will be left at its
+            # default (i.e., disabled).
+            $cron_conf_target = '/etc/yum/yum-cron.conf'
+
+            # CentOS doesn't have the yum plugin.
+            $copr_packages = undef
+
+        }
+
+        'Fedora': {
 
             $services = [
                 'yum-cron',
@@ -47,7 +66,7 @@ class yum::params {
         }
 
         default: {
-            fail ("The yum module is not yet supported on ${::operatingsystem}.")
+            fail ("${title}: operating system '${::operatingsystem}' is not supported")
         }
 
     }
