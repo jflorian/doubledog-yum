@@ -21,12 +21,8 @@ class yum::params {
 
         'CentOS': {
 
-            $services = [
-                'yum-cron',
-            ]
-            $packages = [
-                'yum-cron',
-            ]
+            $services = 'yum-cron'
+            $packages = 'yum-cron'
 
             # CentOS 7 also provides an hourly job, but it will be left at its
             # default (i.e., disabled).
@@ -39,29 +35,14 @@ class yum::params {
 
         'Fedora': {
 
-            $services = [
-                'yum-cron',
-            ]
-            $packages = [
-                'yum-cron',
-            ]
+            $services = 'yum-cron'
+            $packages = 'yum-cron'
 
-            if $::operatingsystemrelease < 19 {
-                $cron_conf_target = '/etc/sysconfig/yum-cron'
-            } else {
-                # Fedora 19 also provides an hourly job, but it will be left
-                # at its default (i.e., disabled).
-                $cron_conf_target = '/etc/yum/yum-cron.conf'
-            }
+            # Fedora 19 also provides an hourly job, but it will be left
+            # at its default (i.e., disabled).
+            $cron_conf_target = '/etc/yum/yum-cron.conf'
 
-            if $::operatingsystemrelease >= 20 {
-                $copr_packages = [
-                    'yum-plugin-copr',
-                ]
-            } else {
-                # The yum plugin was introduced in Fedora 20.
-                $copr_packages = undef
-            }
+            $copr_packages = 'yum-plugin-copr'
 
         }
 
