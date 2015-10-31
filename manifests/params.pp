@@ -6,6 +6,7 @@
 
 class yum::params {
 
+    $cron_service_enable    = true
     $cron_service_ensure    = 'running'
     $update_cmd             = 'default'
     $update_messages        = true

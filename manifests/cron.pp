@@ -6,6 +6,13 @@
 #
 # === Parameters
 #
+# ==== Required
+#
+# ==== Optional
+#
+# [*enable*]
+#   Service is to be started at boot.  Either true (default) or false.
+#
 # [*ensure*]
 #   Service is to be 'running' (default) or 'stopped'.
 #
@@ -66,6 +73,7 @@
 
 
 class yum::cron (
+        $enable             = $::yum::params::cron_service_enable,
         $ensure             = $::yum::params::cron_service_ensure,
         $update_cmd         = $::yum::params::update_cmd,
         $update_messages    = $::yum::params::update_messages,
@@ -101,7 +109,7 @@ class yum::cron (
 
     service { $::yum::params::services:
         ensure     => $ensure,
-        enable     => true,
+        enable     => $enable,
         hasrestart => true,
         hasstatus  => true,
     }
