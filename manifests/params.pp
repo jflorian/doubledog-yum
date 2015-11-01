@@ -29,9 +29,6 @@ class yum::params {
             # default (i.e., disabled).
             $cron_conf_target = '/etc/yum/yum-cron.conf'
 
-            # CentOS doesn't have the yum plugin.
-            $copr_packages = undef
-
         }
 
         'Fedora': {
@@ -42,8 +39,6 @@ class yum::params {
             # Fedora 19 also provides an hourly job, but it will be left
             # at its default (i.e., disabled).
             $cron_conf_target = '/etc/yum/yum-cron.conf'
-
-            $copr_packages = 'yum-plugin-copr'
 
         }
 

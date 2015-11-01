@@ -14,10 +14,6 @@
 #   URI of the yum.conf file content.  One and only one of "content" or
 #   "source" must be given.
 #
-# [*copr_plugin*]
-#   If 'present', the yum plugin for copr support will be installed.  If
-#   'absent' the plugin will be removed.  The default is 'absent'.
-#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
@@ -26,14 +22,9 @@
 class yum (
         $content=undef,
         $source=undef,
-        $copr_plugin='absent',
     ) {
 
-    include 'yum::params'
-
-    class { 'yum::copr':
-        ensure => $copr_plugin,
-    }
+    include '::yum::params'
 
     File {
         owner       => 'root',
