@@ -22,6 +22,7 @@ class yum::params {
 
         'CentOS': {
 
+            $tool = 'yum'
             $services = 'yum-cron'
             $packages = 'yum-cron'
 
@@ -33,6 +34,11 @@ class yum::params {
 
         'Fedora': {
 
+            if $::operatingsystemrelease >= '22' {
+                $tool = 'dnf'
+            } else {
+                $tool = 'yum'
+            }
             $services = 'yum-cron'
             $packages = 'yum-cron'
 

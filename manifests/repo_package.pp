@@ -72,7 +72,7 @@ define yum::repo_package (
             if $dist    { $d = ".${dist}" } else { $d = '' }
             if $arch    { $a = ".${arch}" } else { $a = '' }
 
-            exec { "yum -y install ${uri}/${name}${v}${r}${d}${a}.rpm":
+            exec { "${::yum::params::tool} -y install ${uri}/${name}${v}${r}${d}${a}.rpm":
                 unless  => "rpm -q ${name}",
             }
 

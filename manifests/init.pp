@@ -2,7 +2,7 @@
 #
 # == Class: yum
 #
-# Manages yum on a host.
+# Manages yum/dnf on a host.
 #
 # === Parameters
 #

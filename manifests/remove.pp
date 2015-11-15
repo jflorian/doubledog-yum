@@ -30,7 +30,9 @@
 
 define yum::remove {
 
-    exec { "yum -y remove ${name}":
+    include '::yum::params'
+
+    exec { "${::yum::params::tool} -y remove ${name}":
         onlyif  => "rpm -q ${name}",
     }
 
