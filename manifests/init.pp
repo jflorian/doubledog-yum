@@ -6,25 +6,33 @@
 #
 # === Parameters
 #
+# === Parameters
+#
+# ==== Required
+#
+# ==== Optional
+#
 # [*content*]
-#   Literal content for the yum.conf file.  One and only one of "content" or
-#   "source" must be given.
+#   Literal content for the yum.conf file.  If neither "content" nor "source"
+#   is given, the content of the file will be left unmanaged.
 #
 # [*source*]
-#   URI of the yum.conf file content.  One and only one of "content" or
-#   "source" must be given.
+#   URI of the yum.conf file content.  If neither "content" nor "source" is
+#   given, the content of the file will be left unmanaged.
 #
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
+#
+# === Copyright
+#
+# Copyright 2010-2015 John Florian
 
 
 class yum (
         $content=undef,
         $source=undef,
-    ) {
-
-    include '::yum::params'
+    ) inherits ::yum::params {
 
     File {
         owner       => 'root',
@@ -41,6 +49,6 @@ class yum (
     }
 
     # not used and slows yum startup
-    yum::remove { 'PackageKit-yum-plugin': }
+    ::yum::remove { 'PackageKit-yum-plugin': }
 
 }

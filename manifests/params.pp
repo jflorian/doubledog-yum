@@ -1,8 +1,16 @@
 # modules/yum/manifests/params.pp
 #
-# Synopsis:
-#       Parameters for the yum puppet module.
-
+# == Class: yum::params
+#
+# Parameters for the yum puppet module.
+#
+# === Authors
+#
+#   John Florian <jflorian@doubledog.org>
+#
+# === Copyright
+#
+# Copyright 2013-2015 John Florian
 
 class yum::params {
 
