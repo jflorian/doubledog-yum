@@ -16,9 +16,13 @@
 #   Literal content for the yum.conf file.  If neither "content" nor "source"
 #   is given, the content of the file will be left unmanaged.
 #
+#   Ignored if the host uses dnf instead of yum.
+#
 # [*source*]
 #   URI of the yum.conf file content.  If neither "content" nor "source" is
 #   given, the content of the file will be left unmanaged.
+#
+#   Ignored if the host uses dnf instead of yum.
 #
 # === Authors
 #
@@ -43,9 +47,11 @@ class yum (
         seltype     => 'etc_t',
     }
 
-    file { '/etc/yum.conf':
-        content => $content,
-        source  => $source,
+    if $::yum::params::yum_conf_target {
+        file { $::yum::params::yum_conf_target:
+            content => $content,
+            source  => $source,
+        }
     }
 
     # not used and slows yum startup

@@ -33,6 +33,7 @@ class yum::params {
             $tool = 'yum'
             $services = 'yum-cron'
             $packages = 'yum-cron'
+            $yum_conf_target = '/etc/yum.conf'
 
             # CentOS 7 also provides an hourly job, but it will be left at its
             # default (i.e., disabled).
@@ -44,8 +45,10 @@ class yum::params {
 
             if $::operatingsystemrelease >= '22' {
                 $tool = 'dnf'
+                $yum_conf_target = undef
             } else {
                 $tool = 'yum'
+                $yum_conf_target = '/etc/yum.conf'
             }
             $services = 'yum-cron'
             $packages = 'yum-cron'
