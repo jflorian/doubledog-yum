@@ -67,10 +67,10 @@ define yum::repo_package (
 
         default: {
 
-            if $ver     { $v = "-${ver}" }  else { $v = '' }
-            if $rel     { $r = "-${rel}" }  else { $r = '' }
-            if $dist    { $d = ".${dist}" } else { $d = '' }
-            if $arch    { $a = ".${arch}" } else { $a = '' }
+            if $ver  > '' { $v = "-${ver}" }  else { $v = '' }
+            if $rel  > '' { $r = "-${rel}" }  else { $r = '' }
+            if $dist > '' { $d = ".${dist}" } else { $d = '' }
+            if $arch > '' { $a = ".${arch}" } else { $a = '' }
 
             exec { "${::yum::params::tool} -y install ${uri}/${name}${v}${r}${d}${a}.rpm":
                 unless  => "rpm -q ${name}",
