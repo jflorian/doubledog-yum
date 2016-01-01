@@ -10,7 +10,7 @@
 #
 # === Copyright
 #
-# Copyright 2013-2015 John Florian
+# Copyright 2013-2016 John Florian
 
 class yum::params {
 
