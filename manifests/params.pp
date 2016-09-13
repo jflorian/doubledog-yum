@@ -43,13 +43,8 @@ class yum::params {
 
         'Fedora': {
 
-            if $::operatingsystemrelease >= '22' {
-                $tool = 'dnf'
-                $yum_conf_target = undef
-            } else {
-                $tool = 'yum'
-                $yum_conf_target = '/etc/yum.conf'
-            }
+            $tool = 'dnf'
+            $yum_conf_target = undef
             $services = 'yum-cron'
             $packages = 'yum-cron'
 
