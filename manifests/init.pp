@@ -30,7 +30,7 @@
 #
 # === Copyright
 #
-# Copyright 2010-2016 John Florian
+# Copyright 2010-2017 John Florian
 
 
 class yum (
@@ -38,17 +38,14 @@ class yum (
         $source=undef,
     ) inherits ::yum::params {
 
-    File {
-        owner       => 'root',
-        group       => 'root',
-        mode        => '0644',
-        seluser     => 'system_u',
-        selrole     => 'object_r',
-        seltype     => 'etc_t',
-    }
-
     if $::yum::params::yum_conf_target {
         file { $::yum::params::yum_conf_target:
+            owner   => 'root',
+            group   => 'root',
+            mode    => '0644',
+            seluser => 'system_u',
+            selrole => 'object_r',
+            seltype => 'etc_t',
             content => $content,
             source  => $source,
         }
