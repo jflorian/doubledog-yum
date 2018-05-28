@@ -1,36 +1,7 @@
-# modules/yum/manifests/repo_file.pp
 #
 # == Define: yum::repo_file
 #
-# Manages a YUM repository configuration file via source or literal content.
-#
-# === Parameters
-#
-# ==== Required
-#
-# [*namevar*]
-#   An arbitrary identifier for the YUM repository file instance unless the
-#   "filename" parameter is not set in which case this must provide the value
-#   normally set with the "filename" parameter.
-#
-# ==== Optional
-#
-# [*ensure*]
-#   Instance is to be 'present' (default) or 'absent'.
-#
-# [*filename*]
-#   The name to be given the file when installed.  This should be the base
-#   name alone without any ".repo" extension or any directory pathing.  This
-#   may be used in place of "namevar" if it's beneficial to give namevar an
-#   arbitrary value.
-#
-# [*content*]
-#   Literal content for the YUM repository file.  If neither "content" nor
-#   "source" is given, the content of the file will be left unmanaged.
-#
-# [*source*]
-#   URI of the YUM repository file content.  If neither "content" nor "source"
-#   is given, the content of the file will be left unmanaged.
+# Manages a repository configuration file directly.
 #
 # === Authors
 #
@@ -38,23 +9,19 @@
 #
 # === Copyright
 #
-# Copyright 2015-2016 John Florian
+# This file is part of the doubledog-yum Puppet module.
+# Copyright 2015-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 define yum::repo_file (
-        $ensure='present',
-        $filename=undef,
-        $content=undef,
-        $source=undef,
+        Optional[String[1]]                         $content=undef,
+        Variant[Boolean, Enum['present', 'absent']] $ensure='present',
+        Optional[String[1]]                         $filename=$title,
+        Optional[String[1]]                         $source=undef,
     ) {
 
-    if $filename {
-        $filename_ = $filename
-    } else {
-        $filename_ = $name
-    }
-
-    file { "/etc/yum.repos.d/${filename_}.repo":
+    file { "/etc/yum.repos.d/${filename}.repo":
         ensure  => $ensure,
         owner   => 'root',
         group   => 'root',
