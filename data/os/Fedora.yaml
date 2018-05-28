@@ -1,0 +1,7 @@
+# This file is part of the doubledog-yum Puppet module.
+# Copyright 2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
+
+---
+yum::conf_target:               /etc/dnf/dnf.conf
+yum::source:                    puppet:///modules/yum/dnf.conf

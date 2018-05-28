@@ -1,4 +1,3 @@
-# modules/yum/manifests/params.pp
 #
 # == Class: yum::params
 #
@@ -10,7 +9,10 @@
 #
 # === Copyright
 #
-# Copyright 2013-2016 John Florian
+# This file is part of the doubledog-yum Puppet module.
+# Copyright 2013-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
+
 
 class yum::params {
 
@@ -19,14 +21,12 @@ class yum::params {
         'CentOS': {
 
             $tool = 'yum'
-            $yum_conf_target = '/etc/yum.conf'
 
         }
 
         'Fedora': {
 
             $tool = 'dnf'
-            $yum_conf_target = undef
 
         }
 

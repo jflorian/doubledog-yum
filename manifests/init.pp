@@ -1,28 +1,7 @@
-# modules/yum/manifests/init.pp
 #
 # == Class: yum
 #
 # Manages yum/dnf on a host.
-#
-# === Parameters
-#
-# === Parameters
-#
-# ==== Required
-#
-# ==== Optional
-#
-# [*content*]
-#   Literal content for the yum.conf file.  If neither "content" nor "source"
-#   is given, the content of the file will be left unmanaged.
-#
-#   Ignored if the host uses dnf instead of yum.
-#
-# [*source*]
-#   URI of the yum.conf file content.  If neither "content" nor "source" is
-#   given, the content of the file will be left unmanaged.
-#
-#   Ignored if the host uses dnf instead of yum.
 #
 # === Authors
 #
@@ -30,16 +9,20 @@
 #
 # === Copyright
 #
-# Copyright 2010-2017 John Florian
+# This file is part of the doubledog-yum Puppet module.
+# Copyright 2010-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class yum (
-        $content=undef,
-        $source=undef,
-    ) inherits ::yum::params {
+        Optional[String[1]]             $conf_target,
+        Optional[String[1]]             $content,
+        Optional[String[1]]             $source,
+        Optional[Array[String[1], 1]]   $unwanted_packages,
+    ) {
 
-    if $::yum::params::yum_conf_target {
-        file { $::yum::params::yum_conf_target:
+    if $conf_target {
+        file { $conf_target:
             owner   => 'root',
             group   => 'root',
             mode    => '0644',
@@ -51,7 +34,6 @@ class yum (
         }
     }
 
-    # not used and slows yum startup
-    ::yum::remove { 'PackageKit-yum-plugin': }
+    ::yum::remove { $unwanted_packages: }
 
 }
