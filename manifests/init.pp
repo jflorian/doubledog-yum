@@ -15,6 +15,7 @@
 
 
 class yum (
+        String[1]                       $tool,
         Optional[String[1]]             $conf_target,
         Optional[String[1]]             $content,
         Optional[String[1]]             $source,

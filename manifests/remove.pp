@@ -1,4 +1,3 @@
-# modules/yum/manifests/remove.pp
 #
 # == Define: yum::remove
 #
@@ -32,14 +31,16 @@
 #
 # === Copyright
 #
-# Copyright 2012-2016 John Florian
+# This file is part of the doubledog-yum Puppet module.
+# Copyright 2012-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 define yum::remove {
 
-    include '::yum::params'
+    include '::yum'
 
-    exec { "${::yum::params::tool} -y remove ${name}":
+    exec { "${::yum::tool} -y remove ${name}":
         onlyif  => "rpm -q ${name}",
     }
 

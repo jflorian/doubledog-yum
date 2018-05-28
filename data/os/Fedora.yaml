@@ -5,3 +5,4 @@
 ---
 yum::conf_target:               /etc/dnf/dnf.conf
 yum::source:                    puppet:///modules/yum/dnf.conf
+yum::tool:                      dnf

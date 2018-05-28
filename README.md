@@ -49,6 +49,9 @@ This module provides utilities and other resources to assist in usage of yum/dnf
 
 This class manages the basic yum/dnf configuration.
 
+##### `tool` (required):
+The executable name of the packaging tool, typically `'yum'` or `'dnf'`.  The default should be correct for supported platforms.
+
 ##### `conf_target`:
 Fully-qualified name of the `yum.conf` or `dnf.conf` configuration file.  The default should be correct for supported platforms.  If `undef`, the file will not be managed at all.
 

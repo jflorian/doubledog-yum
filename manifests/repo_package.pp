@@ -1,4 +1,3 @@
-# modules/yum/manifests/repo_package.pp
 #
 # == Define: yum::repo_package
 #
@@ -43,7 +42,9 @@
 #
 # === Copyright
 #
-# Copyright 2015-2016 John Florian
+# This file is part of the doubledog-yum Puppet module.
+# Copyright 2015-2018 John Florian
+# SPDX-License-Identifier: GPL-3.0-or-later
 
 
 define yum::repo_package (
@@ -54,6 +55,8 @@ define yum::repo_package (
         $arch,
         $ensure='present',
     ) {
+
+    include '::yum'
 
     case $ensure {
 
@@ -72,7 +75,7 @@ define yum::repo_package (
             if $dist > '' { $d = ".${dist}" } else { $d = '' }
             if $arch > '' { $a = ".${arch}" } else { $a = '' }
 
-            exec { "${::yum::params::tool} -y install ${uri}/${name}${v}${r}${d}${a}.rpm":
+            exec { "${::yum::tool} -y install ${uri}/${name}${v}${r}${d}${a}.rpm":
                 unless  => "rpm -q ${name}",
             }
 

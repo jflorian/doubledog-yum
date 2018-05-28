@@ -5,3 +5,4 @@
 ---
 yum::conf_target:               /etc/yum.conf
 yum::source:                    puppet:///modules/yum/yum.conf
+yum::tool:                      yum
