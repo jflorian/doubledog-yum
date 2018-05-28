@@ -44,6 +44,7 @@ This module provides utilities and other resources to assist in usage of yum/dnf
 
 * [yum::remove](#yumremove-defined-type)
 * [yum::repo\_file](#yumrepo\_file-defined-type)
+* [yum::repo\_package](#yumrepo\_package-defined-type)
 
 
 ### Classes
@@ -107,6 +108,33 @@ The name to be given the installed file.  This should be the base name alone wit
 
 ##### `source`
 URI of the configuration file content.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
+
+
+#### yum::repo\_package defined type
+
+This defined type manages a repository configuration file indirectly via packaging.
+
+##### `namevar` (required)
+Name of the repository package.
+
+##### `arch`
+Architecture of the repository package.  E.g., `'noarch'`. Required, but may be `''` (an empty string).
+
+##### `dist`
+Distribution tag of the repository package.  E.g., `'fc28'`.  Required, but may be `''`.
+
+##### `ensure`
+Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean value may also be used with `true` equivalent to `present` and `false` equivalent to `absent`.
+
+##### `rel`
+Release number of the repository package.  E.g., `'1'`.  Required, but may be `''`.
+
+##### `uri`
+The URI for obtaining the repository package.  Must be one supported by
+the `'yum install'` (or `'dnf install`') command.  This should include everything from the protocol up to, but not including, the file name.
+
+##### `ver`
+Version number of the repository package.  E.g., `'20'`.  Required, but may be `''`.
 
 
 ## Limitations

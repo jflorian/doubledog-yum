@@ -1,35 +1,7 @@
 #
 # == Define: yum::repo_package
 #
-# Manages a YUM repository configuration via package.
-#
-# === Parameters
-#
-# ==== Required
-#
-# [*namevar*]
-#   Name of the repository package.
-#
-# [*arch*]
-#   Architecture of the repository package.  E.g., 'noarch'. Required, but may
-#   be ''.
-#
-# [*dist*]
-#   Distribution tag of the repository package.  E.g., 'fc20'.  Required, but
-#   may be ''.
-#
-# [*rel*]
-#   Release number of the repository package.  E.g., '1'.  Required, but may
-#   be ''.
-#
-# [*uri*]
-#   The URI for obtaining the repository package.  Must be one supported by
-#   the 'yum install' command.  This should include everything from the
-#   protocol up to, but not including, the file name.
-#
-# [*ver*]
-#   Version number of the repository package.  E.g., '20'.  Required, but may
-#   be ''.
+# Manages a repository configuration indirectly via packaging.
 #
 # ==== Optional
 #
@@ -48,19 +20,19 @@
 
 
 define yum::repo_package (
-        $uri,
-        $ver,
-        $rel,
-        $dist,
-        $arch,
-        $ensure='present',
+        String                                      $arch,
+        String                                      $dist,
+        String                                      $rel,
+        String                                      $uri,
+        String                                      $ver,
+        Variant[Boolean, Enum['present', 'absent']] $ensure='present',
     ) {
 
     include '::yum'
 
     case $ensure {
 
-        'absent': {
+        'absent', false: {
 
             package { $name:
                 ensure => absent,
@@ -76,7 +48,7 @@ define yum::repo_package (
             if $arch > '' { $a = ".${arch}" } else { $a = '' }
 
             exec { "${::yum::tool} -y install ${uri}/${name}${v}${r}${d}${a}.rpm":
-                unless  => "rpm -q ${name}",
+                unless => "rpm -q ${name}",
             }
 
         }
