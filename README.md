@@ -49,23 +49,23 @@ This module provides utilities and other resources to assist in usage of yum/dnf
 
 This class manages the basic yum/dnf configuration.
 
-##### `tool` (required):
+##### `tool` (required)
 The executable name of the packaging tool, typically `'yum'` or `'dnf'`.  The default should be correct for supported platforms.
 
-##### `conf_target`:
+##### `conf_target`
 Fully-qualified name of the `yum.conf` or `dnf.conf` configuration file.  The default should be correct for supported platforms.  If `undef`, the file will not be managed at all.
 
-##### `content`:
+##### `content`
 Literal content for the yum/dnf configuration file.  If both *content* and *source* are `undef`, the content of the file will be left unmanaged.
 
 Ignored if *conf_target* is `undef`.
 
-##### `source`:
+##### `source`
 Puppet URI by which the yum/dnf configuration content will be provided.  If both *content* and *source* are `undef`, the content of the file will be left unmanaged.  By default, this module will provide a default matching that shipped by the OS.
 
 Ignored if *conf_target* is `undef`.
 
-##### `unwanted_packages`:
+##### `unwanted_packages`
 An array of package names to be forcibly removed.  The default is appropriate for hosts typically managed by Puppet.
 
 
