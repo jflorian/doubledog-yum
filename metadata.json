@@ -3,7 +3,7 @@
     "version": "1.1.0",
     "author": "John Florian",
     "license": "GPL-3.0",
-    "summary": "A module to manage the yum server",
+    "summary": "A module to manage the yum/dnf package managers",
     "source": "https://www.doubledog.org/git/puppet-yum.git",
     "operatingsystem_support": [{
         "operatingsystem": "CentOS",
