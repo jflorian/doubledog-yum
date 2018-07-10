@@ -42,6 +42,7 @@ This module provides utilities and other resources to assist in usage of yum/dnf
 
 **Defined types:**
 
+* [yum::plugin\_conf](#yumplugin\_conf-defined-type)
 * [yum::remove](#yumremove-defined-type)
 * [yum::repo\_file](#yumrepo\_file-defined-type)
 * [yum::repo\_package](#yumrepo\_package-defined-type)
@@ -74,6 +75,26 @@ An array of package names to be forcibly removed.  The default is appropriate fo
 
 
 ### Defined types
+
+#### yum::plugin\_conf defined type
+
+This defined type manages a plugin configuration file.
+
+##### `namevar` (required)
+An arbitrary identifier for the repository file instance unless the *filename* parameter is not set in which case this must provide the value normally set with the *filename* parameter.
+
+##### `content`
+Literal content for the configuration file.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
+
+##### `ensure`
+Instance is to be `present` (default) or `absent`.  Alternatively, a Boolean value may also be used with `true` equivalent to `present` and `false` equivalent to `absent`.
+
+##### `filename`
+The name to be given the installed file.  This should be the base name alone without any `'.conf'` suffix nor any path detail.  This may be used in place of *namevar* if it's beneficial to give namevar an arbitrary value.
+
+##### `source`
+URI of the configuration file content.  If neither *content* nor *source* is given, the content of the file will be left unmanaged.
+
 
 #### yum::remove defined type
 
