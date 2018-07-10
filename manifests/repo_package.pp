@@ -3,11 +3,6 @@
 #
 # Manages a repository configuration indirectly via packaging.
 #
-# ==== Optional
-#
-# [*ensure*]
-#   Instance is to be 'present' (default) or 'absent'.
-#
 # === Authors
 #
 #   John Florian <jflorian@doubledog.org>
@@ -20,12 +15,12 @@
 
 
 define yum::repo_package (
-        String                                      $arch,
-        String                                      $dist,
-        String                                      $rel,
-        String                                      $uri,
-        String                                      $ver,
-        Variant[Boolean, Enum['present', 'absent']] $ensure='present',
+        String                  $arch,
+        String                  $dist,
+        String                  $rel,
+        String                  $uri,
+        String                  $ver,
+        Ddolib::File::Ensure    $ensure='present',
     ) {
 
     include '::yum'

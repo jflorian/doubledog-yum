@@ -15,10 +15,10 @@
 
 
 define yum::repo_file (
-        Optional[String[1]]                         $content=undef,
-        Variant[Boolean, Enum['present', 'absent']] $ensure='present',
-        Optional[String[1]]                         $filename=$title,
-        Optional[String[1]]                         $source=undef,
+        Optional[String[1]]     $content=undef,
+        Ddolib::File::Ensure    $ensure='present',
+        Optional[String[1]]     $filename=$title,
+        Optional[String[1]]     $source=undef,
     ) {
 
     file { "/etc/yum.repos.d/${filename}.repo":
