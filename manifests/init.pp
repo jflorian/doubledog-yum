@@ -15,10 +15,10 @@
 
 
 class yum (
-        String[1]                       $tool,
         Optional[String[1]]             $conf_target,
         Optional[String[1]]             $content,
         Optional[String[1]]             $source,
+        Enum['dnf', 'yum']              $tool,
         Optional[Array[String[1], 1]]   $unwanted_packages,
     ) {
 

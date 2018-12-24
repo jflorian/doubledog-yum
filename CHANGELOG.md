@@ -23,6 +23,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 ### Added
 - Fedora 28/29 support
 ### Changed
+- `yum::tool` now accepts `'dnf'` or `'yum'` only
 ### Deprecated
 ### Removed
 - Fedora 26/27 support
