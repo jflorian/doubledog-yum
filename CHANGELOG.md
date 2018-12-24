@@ -24,6 +24,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 - Fedora 28/29 support
 ### Changed
 - `yum::tool` now accepts `'dnf'` or `'yum'` only
+- now compatible with `puppetlabs-stdlib` version 5
 ### Deprecated
 ### Removed
 - Fedora 26/27 support
