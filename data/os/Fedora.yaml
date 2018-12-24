@@ -3,6 +3,6 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 ---
-yum::conf_target:               /etc/dnf/dnf.conf
-yum::source:                    puppet:///modules/yum/dnf.conf
-yum::tool:                      dnf
+
+yum::conf_target:                   '/etc/dnf/dnf.conf'
+yum::tool:                          'dnf'

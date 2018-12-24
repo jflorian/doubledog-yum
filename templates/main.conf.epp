@@ -1,0 +1,38 @@
+<%#
+This file is part of the doubledog-yum Puppet module.
+Copyright 2018 John Florian
+SPDX-License-Identifier: GPL-3.0-or-later
+-%>
+# This file is managed by Puppet via the "doubledog-yum" module.
+
+[main]
+<% if $yum::bugtracker_url { -%>
+bugtracker_url=<%= $yum::bugtracker_url %>
+<% } -%>
+<% if $yum::cachedir { -%>
+cachedir=<%= $yum::cachedir %>
+<% } -%>
+<% if $yum::clean_requirements_on_remove { -%>
+clean_requirements_on_remove=<%= $yum::clean_requirements_on_remove %>
+<% } -%>
+<% if $yum::debuglevel { -%>
+debuglevel=<%= $yum::debuglevel %>
+<% } -%>
+<% if $yum::distroverpkg { -%>
+distroverpkg=<%= $yum::distroverpkg %>
+<% } -%>
+<% if $yum::gpgcheck { -%>
+gpgcheck=<%= $yum::gpgcheck %>
+<% } -%>
+<% if $yum::installonly_limit { -%>
+installonly_limit=<%= $yum::installonly_limit %>
+<% } -%>
+<% if $yum::keepcache { -%>
+keepcache=<%= $yum::keepcache %>
+<% } -%>
+<% if $yum::plugins { -%>
+plugins=<%= $yum::plugins %>
+<% } -%>
+<% if $yum::proxy { -%>
+proxy=<%= $yum::proxy %>
+<% } -%>

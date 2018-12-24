@@ -3,6 +3,16 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 ---
-yum::content:                   null
+
+yum::bugtracker_url:                null
+yum::cachedir:                      null
+yum::clean_requirements_on_remove:  null
+yum::debuglevel:                    null
+yum::distroverpkg:                  null
+yum::gpgcheck:                      null
+yum::installonly_limit:             null
+yum::keepcache:                     null
+yum::plugins:                       null
+yum::proxy:                         null
 yum::unwanted_packages:
     - PackageKit-yum-plugin

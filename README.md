@@ -57,18 +57,38 @@ This class manages the basic yum/dnf configuration.
 ##### `tool` (required)
 The executable name of the packaging tool.  One of `'yum'` or `'dnf'`.  The default should be correct for supported platforms.
 
+##### `bugtracker_url` (yum only)
+URL where bugs should be filed for yum.  The default matches that of supported platforms.
+
+##### `cachedir` (yum only)
+Directory where yum should store its cache and db files.  The default matches that of supported platforms.
+
+##### `clean_requirements_on_remove`
+Remove dependencies that are no longer used during package removal.  The default matches that of supported platforms.
+
 ##### `conf_target`
 Fully-qualified name of the `yum.conf` or `dnf.conf` configuration file.  The default should be correct for supported platforms.  If `undef`, the file will not be managed at all.
 
-##### `content`
-Literal content for the yum/dnf configuration file.  If both *content* and *source* are `undef`, the content of the file will be left unmanaged.
+##### `debuglevel`
+Debug messages output level, in the range `0` to `10`. The higher the number the more debug output is put to stdout.  The default matches that of supported platforms.
 
-Ignored if *conf_target* is `undef`.
+##### `distroverpkg` (yum only)
+The package used by yum to determine the "version" of the distribution, this sets `$releasever` for use in repo files.  The default matches that of supported platforms.
 
-##### `source`
-Puppet URI by which the yum/dnf configuration content will be provided.  If both *content* and *source* are `undef`, the content of the file will be left unmanaged.  By default, this module will provide a default matching that shipped by the OS.
+##### `gpgcheck`
+Whether to perform GPG signature check on packages.  One of `0` (no) or `1` (yes).  The default matches that of supported platforms.
 
-Ignored if *conf_target* is `undef`.
+##### `installonly_limit`
+Number of "installonly" packages allowed to be installed concurrently.  The default matches that of supported platforms.
+
+##### `keepcache`
+Whether to keeps downloaded packages in the cache.  One of `0` (no) or `1` (yes).  The default matches that of supported platforms.
+
+##### `plugins` (yum only)
+Whether to enable or disable yum plugins.  One of `0` (no) or `1` (yes).  The default matches that of supported platforms.
+
+##### `proxy`
+URL of a proxy server to connect through.  The default is to use a direct connection.
 
 ##### `unwanted_packages`
 An array of package names to be forcibly removed.  The default is appropriate for hosts typically managed by Puppet.

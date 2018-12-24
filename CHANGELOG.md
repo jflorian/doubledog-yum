@@ -19,12 +19,23 @@ Template
 
 All notable changes to this project (since v1.1.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [1.2.0] WIP
+## [2.0.0] WIP
 ### Added
 - Fedora 28/29 support
 ### Changed
 - `yum::tool` now accepts `'dnf'` or `'yum'` only
 - now compatible with `puppetlabs-stdlib` version 5
+- `yum` class no longer accepts `content` nor `source` parameters, but now accepts many new parameters for more proper control:
+    - `bugtracker_url`
+    - `cachedir`
+    - `clean_requirements_on_remove`
+    - `debuglevel`
+    - `distroverpkg`
+    - `gpgcheck`
+    - `installonly_limit`
+    - `keepcache`
+    - `plugins`
+    - `proxy`
 ### Deprecated
 ### Removed
 - Fedora 26/27 support

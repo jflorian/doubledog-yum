@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 ---
-yum::conf_target:               /etc/yum.conf
-yum::source:                    puppet:///modules/yum/yum.conf
-yum::tool:                      yum
+
+yum::bugtracker_url:                'http://bugs.centos.org/set_project.php?project_id=23&ref=http://bugs.centos.org/bug_report_page.php?category=yum'
+yum::cachedir:                      '/var/cache/yum/$basearch/$releasever'
+yum::conf_target:                   '/etc/yum.conf'
+yum::distroverpkg:                  'centos-release'
+yum::tool:                          'yum'
