@@ -19,14 +19,9 @@ Template
 
 All notable changes to this project (since v1.1.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [2.1.0] WIP
-### Added
+## [2.1.0] 2019-03-28
 ### Changed
 - dependency on `doubledog/ddolib` now expects 1 >= version < 2
-### Deprecated
-### Removed
-### Fixed
-### Security
 
 ## [2.0.0] 2018-12-24
 ### Added
