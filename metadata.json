@@ -1,10 +1,17 @@
 {
-    "name": "doubledog-yum",
-    "version": "2.1.0",
     "author": "John Florian",
+    "dependencies": [
+        {
+            "name": "doubledog/ddolib",
+            "version_requirement": ">= 1.0.0 < 2.0.0"
+        },
+        {
+            "name": "puppetlabs/stdlib",
+            "version_requirement": ">= 4.25.0 < 6.0.0"
+        }
+    ],
     "license": "GPL-3.0",
-    "summary": "A module to manage the yum/dnf package managers",
-    "source": "https://www.doubledog.org/git/puppet-yum.git",
+    "name": "doubledog-yum",
     "operatingsystem_support": [
         {
             "operatingsystem": "CentOS",
@@ -15,19 +22,13 @@
         {
             "operatingsystem": "Fedora",
             "operatingsystemrelease": [
-                "28",
-                "29"
+                "29",
+                "30",
+                "31"
             ]
         }
     ],
-    "dependencies": [
-        {
-            "name": "doubledog/ddolib",
-            "version_requirement": ">= 1.0.0 < 2.0.0"
-        },
-        {
-            "name": "puppetlabs/stdlib",
-            "version_requirement": ">= 4.25.0 < 6.0.0"
-        }
-    ]
+    "source": "https://www.doubledog.org/git/puppet-yum.git",
+    "summary": "A module to manage the yum/dnf package managers",
+    "version": "2.1.0"
 }
