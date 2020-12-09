@@ -31,5 +31,5 @@
     ],
     "source": "https://www.doubledog.org/git/puppet-yum.git",
     "summary": "A module to manage the yum/dnf package managers",
-    "version": "2.1.0"
+    "version": "2.2.0"
 }
