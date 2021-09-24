@@ -1,11 +1,14 @@
 <%#
 This file is part of the doubledog-yum Puppet module.
-Copyright 2018 John Florian
+Copyright 2018-2021 John Florian
 SPDX-License-Identifier: GPL-3.0-or-later
 -%>
 # This file is managed by Puppet via the "doubledog-yum" module.
 
 [main]
+<% if $yum::best { -%>
+best=<%= $yum::best %>
+<% } -%>
 <% if $yum::bugtracker_url { -%>
 bugtracker_url=<%= $yum::bugtracker_url %>
 <% } -%>

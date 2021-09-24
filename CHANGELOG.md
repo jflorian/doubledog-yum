@@ -21,6 +21,7 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 
 ## [2.2.1] WIP
 ### Added
+- `yum::best` parameter
 ### Changed
 - defaults now generally assume dnf with only CentOS 7 now deviating
 ### Deprecated

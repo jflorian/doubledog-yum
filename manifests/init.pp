@@ -10,11 +10,12 @@
 # === Copyright
 #
 # This file is part of the doubledog-yum Puppet module.
-# Copyright 2010-2018 John Florian
+# Copyright 2010-2021 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 
 class yum (
+        Optional[Boolean]               $best,
         Optional[String[1]]             $bugtracker_url,
         Optional[String[1]]             $cachedir,
         Optional[Boolean]               $clean_requirements_on_remove,

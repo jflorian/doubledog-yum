@@ -4,6 +4,7 @@
 
 ---
 
+yum::best:                          null
 yum::bugtracker_url:                null
 yum::cachedir:                      null
 yum::clean_requirements_on_remove:  null
