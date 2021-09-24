@@ -19,18 +19,16 @@ Template
 
 All notable changes to this project (since v1.1.0) will be documented in this file.  The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [2.2.1] WIP
+## [2.2.1] 2021-09-24
 ### Added
 - `yum::best` parameter
 - Fedora 34 support
 ### Changed
 - defaults now generally assume dnf with only CentOS 7 now deviating
-### Deprecated
 ### Removed
 - Fedora 31 support
 ### Fixed
 - CentOS 8 gets managed as yum but should be dnf
-### Security
 
 ## [2.2.0] 2020-12-09
 ### Added
