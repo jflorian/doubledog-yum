@@ -22,10 +22,12 @@ All notable changes to this project (since v1.1.0) will be documented in this fi
 ## [2.2.1] WIP
 ### Added
 - `yum::best` parameter
+- Fedora 34 support
 ### Changed
 - defaults now generally assume dnf with only CentOS 7 now deviating
 ### Deprecated
 ### Removed
+- Fedora 31 support
 ### Fixed
 - CentOS 8 gets managed as yum but should be dnf
 ### Security
