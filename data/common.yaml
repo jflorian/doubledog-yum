@@ -1,12 +1,14 @@
 # This file is part of the doubledog-yum Puppet module.
-# Copyright 2018 John Florian
+# Copyright 2018-2021 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 ---
 
+yum::best:                          null
 yum::bugtracker_url:                null
 yum::cachedir:                      null
 yum::clean_requirements_on_remove:  null
+yum::conf_target:                   '/etc/dnf/dnf.conf'
 yum::debuglevel:                    null
 yum::distroverpkg:                  null
 yum::gpgcheck:                      null
@@ -14,5 +16,6 @@ yum::installonly_limit:             null
 yum::keepcache:                     null
 yum::plugins:                       null
 yum::proxy:                         null
+yum::tool:                          'dnf'
 yum::unwanted_packages:
     - PackageKit-yum-plugin

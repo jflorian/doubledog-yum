@@ -23,13 +23,13 @@
         {
             "operatingsystem": "Fedora",
             "operatingsystemrelease": [
-                "31",
                 "32",
-                "33"
+                "33",
+                "34"
             ]
         }
     ],
     "source": "https://www.doubledog.org/git/puppet-yum.git",
     "summary": "A module to manage the yum/dnf package managers",
-    "version": "2.2.0"
+    "version": "2.2.1"
 }

@@ -1,6 +1,6 @@
 <!--
 # This file is part of the doubledog-yum Puppet module.
-# Copyright 2018 John Florian
+# Copyright 2018-2021 John Florian
 # SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
@@ -56,6 +56,9 @@ This class manages the basic yum/dnf configuration.
 
 ##### `tool` (required)
 The executable name of the packaging tool.  One of `'yum'` or `'dnf'`.  The default should be correct for supported platforms.
+
+##### `best` (dnf only)
+A value of `true` instructs the solver to either use a package with the highest available version or fail.  When `false`, do not fail if the latest version cannot be installed and go with the lower version.  The default matches that of supported platforms.
 
 ##### `bugtracker_url` (yum only)
 URL where bugs should be filed for yum.  The default matches that of supported platforms.
